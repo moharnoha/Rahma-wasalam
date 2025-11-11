@@ -5,11 +5,16 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Design Header Fixed</title>
 
-  <!-- ✅ اللون الأزرق الذي يظهر في شريط المتصفح / الهاتف -->
-  <meta name="theme-color" content="#3f5bff">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="msapplication-navbutton-color" content="#3f5bff">
+  <!-- ✅ إعدادات اللون في المتصفحات -->
+  <meta name="theme-color" content="#3f5bff"> <!-- لأندرويد -->
+  <meta name="apple-mobile-web-app-capable" content="yes"> <!-- لتفعيل PWA في iPhone -->
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"> <!-- نمط شريط الحالة -->
+  <meta name="msapplication-navbutton-color" content="#3f5bff"> <!-- لمايكروسوفت -->
 
+  <!-- أيقونة الموقع (يمكنك تعديلها لاحقًا) -->
+  <link rel="icon" href="https://i.postimg.cc/vHqVW38n/IMG-0846.jpg">
+
+  <!-- الخط -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
   <style>
@@ -25,6 +30,7 @@
       background:#fafafa;
     }
 
+    /* ✅ الهيدر الثابت */
     header{
       position:fixed;
       top:0;
@@ -34,6 +40,7 @@
       background:var(--black-header);
       color:var(--white);
       border-bottom:1px solid var(--gray-border);
+      box-shadow:0 2px 8px rgba(0,0,0,0.2);
     }
 
     .header-inner{
@@ -43,7 +50,7 @@
       padding:14px 16px;
     }
 
-    /* زر القائمة */
+    /* أيقونة القائمة */
     .hamburger{
       background:none;
       border:none;
@@ -76,7 +83,7 @@
       cursor:pointer;
     }
 
-    /* شريط القوائم */
+    /* القوائم */
     nav{
       display:flex;
       gap:24px;
@@ -87,7 +94,13 @@
       background:var(--black-header);
     }
 
-    /* تكيف مع الشاشات الصغيرة */
+    /* محتوى فارغ فقط للحشو (اختياري) */
+    main{
+      height:150vh; /* لتجربة الثبات أثناء التمرير */
+      background:#fafafa;
+    }
+
+    /* الهاتف */
     @media (max-width:480px){
       .logo img{ height:30px; }
       nav{ gap:16px; font-size:14px; }
@@ -105,7 +118,7 @@
         </svg>
       </button>
 
-      <!-- ✅ شعار الموقع الجديد -->
+      <!-- ✅ شعار الموقع -->
       <a href="#" class="logo">
         <img src="https://i.postimg.cc/vHqVW38n/IMG-0846.jpg" alt="Logo">
       </a>
@@ -122,6 +135,8 @@
       <span>AI</span>
     </nav>
   </header>
+
+  <main></main>
 
 </body>
 </html>
