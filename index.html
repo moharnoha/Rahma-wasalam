@@ -3,19 +3,20 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Design Header Fixed + Hero Section</title>
+  <title>Design Header Fixed + Sections</title>
 
-  <!-- إعدادات اللون في المتصفحات -->
+  <!-- إعدادات المتصفح -->
   <meta name="theme-color" content="#3f5bff">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="msapplication-navbutton-color" content="#3f5bff">
 
-  <!-- أيقونة الموقع -->
+  <!-- الأيقونة -->
   <link rel="icon" href="https://i.postimg.cc/vHqVW38n/IMG-0846.jpg">
 
-  <!-- الخط -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <!-- الخطوط -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
 
   <style>
     :root{
@@ -28,7 +29,6 @@
       margin:0;
       font-family:"Inter",sans-serif;
       background:#fafafa;
-      scroll-behavior:smooth;
     }
 
     /* ✅ الهيدر الثابت */
@@ -79,11 +79,6 @@
       padding:10px 16px;
       font-weight:600;
       cursor:pointer;
-      transition:background 0.3s ease;
-    }
-
-    .cta:hover{
-      background:rgba(255,255,255,0.2);
     }
 
     nav{
@@ -96,18 +91,7 @@
       background:var(--black-header);
     }
 
-    /* ✅ تعويض مساحة الهيدر */
-    main{
-      margin-top:120px; /* لتفادي تغطية القسم الأول بالهيدر */
-    }
-
-    /* الهاتف */
-    @media (max-width:480px){
-      .logo img{ height:30px; }
-      nav{ gap:16px; font-size:14px; }
-    }
-
-    /* ===== قسم Créateur de site Web ===== */
+    /* القسم الأول */
     .hero-normal {
       width: 100%;
       min-height: 100vh;
@@ -121,6 +105,7 @@
       padding: 80px 20px;
       box-sizing: border-box;
       overflow: hidden;
+      padding-top: 120px; /* ترك مساحة للهيدر */
     }
 
     .hero-normal .content {
@@ -228,37 +213,72 @@
       60% {transform: translateY(5px);}
     }
 
-    @media (max-width: 480px) {
-      .hero-normal h1 {
-        font-size: 2.3rem;
+    /* ✅ القسم الثالث (الجديد) */
+    .hero-full {
+      width: 100vw;
+      min-height: 100vh;
+      background: #f5f6f7;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 10vw;
+      box-sizing: border-box;
+      font-family: "Cairo", sans-serif;
+    }
+
+    .hero-content {
+      max-width: 850px;
+      text-align: start;
+    }
+
+    .hero-content .kicker {
+      display: inline-block;
+      font-size: clamp(14px, 1.2vw, 16px);
+      font-weight: 700;
+      color: #2e55f2;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 18px;
+    }
+
+    .hero-content h1 {
+      font-size: clamp(36px, 5.8vw, 78px);
+      font-weight: 800;
+      line-height: 1.1;
+      color: #111;
+      margin-bottom: 22px;
+    }
+
+    .hero-content p {
+      font-size: clamp(16px, 1.6vw, 22px);
+      color: #555;
+      line-height: 1.8;
+      max-width: 700px;
+    }
+
+    @media (max-width: 640px) {
+      .hero-full {
+        padding: 0 6vw;
+        text-align: center;
       }
-      .hero-normal p {
-        font-size: 1rem;
-        margin-bottom: 2rem;
+      .hero-content {
+        max-width: 100%;
       }
-      .hero-normal input,
-      .hero-normal button {
-        max-width: 90%;
+      .hero-content h1 {
+        line-height: 1.2;
       }
     }
-    /* ===== نهاية قسم Créateur de site Web ===== */
   </style>
 </head>
 <body>
 
-  <!-- ✅ الهيدر الثابت -->
+  <!-- ✅ الهيدر -->
   <header>
     <div class="header-inner">
       <button class="hamburger" aria-label="menu">
-        <svg viewBox="0 0 24 24">
-          <path d="M4 7h16M4 12h16M4 17h16" stroke-linecap="round" />
-        </svg>
+        <svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16" stroke-linecap="round" /></svg>
       </button>
-
-      <a href="#" class="logo">
-        <img src="https://i.postimg.cc/vHqVW38n/IMG-0846.jpg" alt="Logo">
-      </a>
-
+      <a href="#" class="logo"><img src="https://i.postimg.cc/vHqVW38n/IMG-0846.jpg" alt="Logo"></a>
       <button class="cta">Connectez-vous</button>
     </div>
 
@@ -270,34 +290,38 @@
     </nav>
   </header>
 
-  <!-- ✅ محتوى الصفحة -->
-  <main>
-    <!-- ===== قسم Créateur de site Web ===== -->
-    <section class="hero-normal">
-      <div class="content">
-        <h1>Créateur de<br>site Web</h1>
-        <p>Créez un magnifique site Web en quelques secondes</p>
-
-        <input type="text" placeholder="Saisir le nom de votre entreprise">
-
-        <button>Commencer Maintenant</button>
-
-        <div class="upload">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-            <path d="M12 16V8m0 0l-4 4m4-4l4 4M4 20h16" />
-          </svg>
-          Téléchargez Votre Logo
-        </div>
-
-        <div class="arrow">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-            <path d="M6 9l6 6 6-6" />
-          </svg>
-        </div>
+  <!-- ✅ القسم الأول -->
+  <section class="hero-normal">
+    <div class="content">
+      <h1>Créateur de<br>site Web</h1>
+      <p>Créez un magnifique site Web en quelques secondes</p>
+      <input type="text" placeholder="Saisir le nom de votre entreprise">
+      <button>Commencer Maintenant</button>
+      <div class="upload">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path d="M12 16V8m0 0l-4 4m4-4l4 4M4 20h16" />
+        </svg>
+        Téléchargez Votre Logo
       </div>
-    </section>
-    <!-- ===== نهاية القسم ===== -->
-  </main>
+      <div class="arrow">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path d="M6 9l6 6 6-6" />
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- ✅ القسم الثالث الجديد -->
+  <section class="hero-full">
+    <div class="hero-content">
+      <span class="kicker">نَمَاذِجُ التَّصْمِيم</span>
+      <h1>أنشئ موقعك الإلكتروني الاحترافي<br>في لحظات. ابدأ مجانًا الآن!</h1>
+      <p>
+        هل ترغب في موقع إلكتروني لشركتك، لمتجرك، أو لمشروعك الناشئ؟<br>
+        أياً كانت فكرتك، نحن نساعدك على تصميم وتطوير موقع أنيق وجاهز للعمل في ثوانٍ.
+      </p>
+    </div>
+  </section>
 
 </body>
 </html>
