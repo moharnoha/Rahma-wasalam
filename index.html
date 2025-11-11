@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Design Header Fixed + Sections</title>
+  <title>Design Header Fixed + Sections Ajustés</title>
 
   <!-- إعدادات المتصفح -->
   <meta name="theme-color" content="#3f5bff">
@@ -91,10 +91,9 @@
       background:var(--black-header);
     }
 
-    /* القسم الأول */
+    /* ✅ القسم الثاني (Créateur de site Web) */
     .hero-normal {
       width: 100%;
-      min-height: 100vh;
       background: linear-gradient(180deg, #0c0c0c 0%, #121212 100%);
       display: flex;
       align-items: center;
@@ -102,10 +101,9 @@
       text-align: center;
       color: #fff;
       font-family: 'Inter', sans-serif;
-      padding: 80px 20px;
+      padding: 140px 20px 80px; /* أعلى أكبر بسبب الهيدر */
       box-sizing: border-box;
       overflow: hidden;
-      padding-top: 120px; /* ترك مساحة للهيدر */
     }
 
     .hero-normal .content {
@@ -124,14 +122,14 @@
     .hero-normal p {
       font-size: 1.1rem;
       color: #c8c8c8;
-      margin-bottom: 2.5rem;
+      margin-bottom: 2rem;
       line-height: 1.6;
     }
 
     .hero-normal input {
       width: 100%;
       max-width: 360px;
-      padding: 15px;
+      padding: 14px;
       border-radius: 14px;
       border: none;
       outline: none;
@@ -139,7 +137,7 @@
       background-color: #fff;
       color: #000;
       text-align: center;
-      margin-bottom: 1.4rem;
+      margin-bottom: 1.2rem;
       box-shadow: 0 2px 5px rgba(0,0,0,0.25);
     }
 
@@ -150,7 +148,7 @@
     .hero-normal button {
       width: 100%;
       max-width: 360px;
-      padding: 15px;
+      padding: 14px;
       background-color: #3b5bff;
       border: none;
       color: white;
@@ -172,17 +170,13 @@
       align-items: center;
       justify-content: center;
       gap: 8px;
-      margin-top: 1.6rem;
+      margin-top: 1.4rem;
       color: #fff;
       font-weight: 600;
       font-size: 1rem;
       opacity: 0.9;
       cursor: pointer;
       transition: opacity 0.2s ease;
-    }
-
-    .hero-normal .upload:hover {
-      opacity: 1;
     }
 
     .hero-normal .upload svg {
@@ -194,7 +188,7 @@
     }
 
     .hero-normal .arrow {
-      margin-top: 2.5rem;
+      margin-top: 2rem;
       animation: bounce 2s infinite;
       opacity: 0.9;
     }
@@ -213,15 +207,14 @@
       60% {transform: translateY(5px);}
     }
 
-    /* ✅ القسم الثالث (الجديد) */
+    /* ✅ القسم الثالث (نَمَاذِجُ التَّصْمِيم) */
     .hero-full {
-      width: 100vw;
-      min-height: 100vh;
+      width: 100%;
       background: #f5f6f7;
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 0 10vw;
+      padding: 80px 10vw;
       box-sizing: border-box;
       font-family: "Cairo", sans-serif;
     }
@@ -258,7 +251,7 @@
 
     @media (max-width: 640px) {
       .hero-full {
-        padding: 0 6vw;
+        padding: 60px 6vw;
         text-align: center;
       }
       .hero-content {
@@ -290,7 +283,7 @@
     </nav>
   </header>
 
-  <!-- ✅ القسم الأول -->
+  <!-- ✅ القسم الثاني -->
   <section class="hero-normal">
     <div class="content">
       <h1>Créateur de<br>site Web</h1>
@@ -311,7 +304,7 @@
     </div>
   </section>
 
-  <!-- ✅ القسم الثالث الجديد -->
+  <!-- ✅ القسم الثالث -->
   <section class="hero-full">
     <div class="hero-content">
       <span class="kicker">نَمَاذِجُ التَّصْمِيم</span>
