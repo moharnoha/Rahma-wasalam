@@ -19,79 +19,86 @@
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
 
   <style>
-    :root{
-      --black-header:#111;
-      --white:#fff;
-      --gray-border:rgba(255,255,255,0.08);
+    :root {
+      --black-header: #111;
+      --white: #fff;
+      --gray-border: rgba(255,255,255,0.08);
     }
 
-    body{
-      margin:0;
-      font-family:"Inter",sans-serif;
-      background:#fafafa;
+    body {
+      margin: 0;
+      font-family: "Inter", sans-serif;
+      background: #fafafa;
     }
+
     /* ✅ الهيدر الثابت */
-    header{
-      position:fixed;
-      top:0;
-      left:0;
-      right:0;
-      z-index:100;
-      background:var(--black-header);
-      color:var(--white);
-      border-bottom:1px solid var(--gray-border);
-      box-shadow:0 2px 8px rgba(0,0,0,0.2);
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      background: var(--black-header);
+      color: var(--white);
+      border-bottom: 1px solid var(--gray-border);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
     }
 
-    .header-inner{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      padding:14px 16px;
+    .header-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px 16px;
     }
 
-    .hamburger{
-      background:none;
-      border:none;
-      cursor:pointer;
-      color:white;
-    }
-    .hamburger svg{
-      width:24px;
-      height:24px;
-      stroke:white;
-      stroke-width:2.5;
-      fill:none;
+    .hamburger {
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: white;
     }
 
-    .logo img{
-      height:36px;
-      display:block;
-      object-fit:contain;
+    .hamburger svg {
+      width: 24px;
+      height: 24px;
+      stroke: white;
+      stroke-width: 2.5;
+      fill: none;
     }
 
-    .cta{
-      background:rgba(255,255,255,0.1);
-      color:white;
-      border:none;
-      border-radius:12px;
-      padding:10px 16px;
-      font-weight:600;
-      cursor:pointer;
+    .logo img {
+      height: 36px;
+      display: block;
+      object-fit: contain;
     }
 
-    nav{
-      display:flex;
-      gap:24px;
-      padding:12px 16px;
-      border-top:1px solid var(--gray-border);
-      font-weight:600;
-      font-size:15px;
-      background:var(--black-header);
+    .cta {
+      background: rgba(255,255,255,0.1);
+      color: white;
+      border: none;
+      border-radius: 12px;
+      padding: 10px 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .cta:hover {
+      background: rgba(255,255,255,0.2);
+    }
+
+    nav {
+      display: flex;
+      gap: 24px;
+      padding: 12px 16px;
+      border-top: 1px solid var(--gray-border);
+      font-weight: 600;
+      font-size: 15px;
+      background: var(--black-header);
     }
 
     /* ==========================
-       القسم الثاني
+       ✅ القسم الثاني (محدث بالكامل)
     ========================== */
     .hero-normal {
       width: 100%;
@@ -104,11 +111,19 @@
       font-family: 'Inter', sans-serif;
       padding: 110px 20px 90px;
       box-sizing: border-box;
+      position: relative;
+      overflow: hidden;
     }
 
     .hero-normal .content {
       max-width: 420px;
       width: 100%;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     .hero-normal h1 {
@@ -143,12 +158,12 @@
       background-color: #fff;
       color: #000;
       text-align: center;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
       transition: 0.2s ease;
     }
 
     .hero-normal input:focus {
-      box-shadow: 0 0 0 3px rgba(59,91,255,0.4);
+      box-shadow: 0 0 0 3px rgba(59, 91, 255, 0.4);
     }
 
     .hero-normal input::placeholder {
@@ -201,11 +216,16 @@
       opacity: 1;
     }
 
+    @keyframes shake {
+      0%, 100% { transform: translateX(0); }
+      20%, 60% { transform: translateX(-6px); }
+      40%, 80% { transform: translateX(6px); }
+    }
+
     @media (max-width: 640px) {
       .hero-normal {
         padding: 90px 20px 70px;
       }
-
       .hero-normal input,
       .hero-normal button {
         max-width: 90%;
@@ -348,31 +368,36 @@
 </head>
 <body>
 
-  <!-- الهيدر -->
+  <!-- ✅ الهيدر -->
   <header>
     <div class="header-inner">
       <button class="hamburger" aria-label="menu">
         <svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16" stroke-linecap="round"/></svg>
       </button>
       <a href="#" class="logo"><img src="https://i.postimg.cc/vHqVW38n/IMG-0846.jpg" alt="Logo"></a>
-      <button class="cta">Connectez-vous</button>
+      <button class="cta" onclick="window.location.href='Connectez-vous.html'">Connectez-vous</button>
     </div>
     <nav>
       <span>Logos</span><span>Cartes de visite</span><span>Sites Web</span><span>Ads</span>
     </nav>
   </header>
 
-  <!-- القسم الثاني -->
+  <!-- ✅ القسم الثاني -->
   <section class="hero-normal">
     <div class="content">
       <h1>Créateur de<br>site Web</h1>
       <p>Créez un magnifique site Web en quelques secondes</p>
+
       <div class="input-wrapper">
-        <input type="text" placeholder="Saisir le nom de votre entreprise">
+        <input type="text" id="entrepriseInput" placeholder="Saisir le nom de votre entreprise">
       </div>
-      <button>Commencer Maintenant</button>
-      <div class="upload">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 16V8m0 0l-4 4m4-4l4 4M4 20h16"/></svg>
+
+      <button id="startBtn">Commencer Maintenant</button>
+
+      <div class="upload" id="uploadLogo">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path d="M12 16V8m0 0l-4 4m4-4l4 4M4 20h16" />
+        </svg>
         Téléchargez Votre Logo
       </div>
     </div>
@@ -410,5 +435,37 @@
     </div>
   </section>
 
+  <script>
+    const startBtn = document.getElementById('startBtn');
+    const entrepriseInput = document.getElementById('entrepriseInput');
+    const uploadLogo = document.getElementById('uploadLogo');
+
+    // ✅ زر Commencer Maintenant
+    startBtn.addEventListener('click', () => {
+      const name = entrepriseInput.value.trim();
+
+      if (name === "") {
+        entrepriseInput.focus();
+        entrepriseInput.style.animation = "shake 0.3s";
+        setTimeout(() => (entrepriseInput.style.animation = ""), 300);
+      } else {
+        localStorage.setItem('entrepriseName', name);
+        document.body.style.transition = "opacity 0.5s ease";
+        document.body.style.opacity = "0";
+        setTimeout(() => {
+          window.location.href = "Connectez-vous/";
+        }, 500);
+      }
+    });
+
+    // ✅ الزر Téléchargez Votre Logo
+    uploadLogo.addEventListener('click', () => {
+      document.body.style.transition = "opacity 0.5s ease";
+      document.body.style.opacity = "0";
+      setTimeout(() => {
+        window.location.href = "Connectez-vous/";
+      }, 500);
+    });
+  </script>
 </body>
 </html>
