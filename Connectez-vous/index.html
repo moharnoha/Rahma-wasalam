@@ -1,9 +1,10 @@
 <!doctype html>
+
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>أنشئ موقع الويب الخاص بك</title>
+  <title>إنشاء موقعك</title>
   <style>
     :root{
       --bg:#f6f7fb;
@@ -17,123 +18,122 @@
       color:#222;
       min-height:100vh;display:flex;align-items:flex-start;justify-content:center;padding:40px 16px;
     }
-    .container{width:100%;max-width:860px}
-    header{
-      display:flex;align-items:center;gap:18px;margin-bottom:18px;
-    }
-    .logo{
-      display:flex;align-items:center;gap:10px;
-      font-weight:700;font-size:20px;color:var(--accent);
-    }
-    .logo .mark{
-      background:linear-gradient(90deg,#ffd3f6,#bfa1ff);
-      padding:8px 12px;border-radius:10px;color:white;font-weight:800;
-      box-shadow:0 6px 18px rgba(138,79,255,0.12);
-    }
+    .container{width:100%;max-width:860px}header{
+  height:20px;
+  margin-bottom:18px;
+}
 
-    .hero{
-      background:transparent;padding:18px 6px 6px 6px;margin-bottom:18px;
-    }
-    h1{
-      font-size:40px;margin:6px 0 6px;line-height:1.02;
-      font-weight:700;color:#222;
-    }
-    h1 .accent{color:var(--accent);display:block;font-size:36px}
-    p.lead{color:var(--muted);margin:8px 0 18px}
+.hero{
+  background:transparent;padding:18px 6px 6px 6px;margin-bottom:18px;
+}
+h1{
+  font-size:36px;margin:6px 0 6px;line-height:1.4;
+  font-weight:700;color:#222;
+}
+h1 .accent{
+  color:var(--accent);
+  display:block;
+  font-size:32px;
+}
+p.lead{color:var(--muted);margin:8px 0 18px}
 
-    .card{
-      background:var(--card);border-radius:14px;padding:22px;box-shadow:0 6px 30px rgba(19,25,41,0.06);
-    }
+.card{
+  background:var(--card);border-radius:14px;padding:22px;box-shadow:0 6px 30px rgba(19,25,41,0.06);
+}
 
-    label{display:block;margin:12px 0 8px;color:#333;font-weight:600}
-    input[type="text"], input[type="email"], textarea{
-      width:100%;padding:16px;border-radius:12px;border:1px solid #eee;
-      background:#fbfbff;font-size:15px;outline:none;
-    }
-    textarea{min-height:100px;resize:vertical}
-    .row{display:flex;gap:12px;flex-wrap:wrap}
-    .col{flex:1;min-width:180px}
+label{display:block;margin:12px 0 8px;color:#333;font-weight:600}
+input[type="text"], input[type="email"], textarea{
+  width:100%;padding:16px;border-radius:12px;border:1px solid #eee;
+  background:#fbfbff;font-size:15px;outline:none;
+}
+textarea{min-height:100px;resize:vertical}
 
-    .actions{display:flex;gap:10px;justify-content:flex-start;margin-top:16px}
-    button{
-      padding:10px 16px;border-radius:10px;border:0;cursor:pointer;font-weight:600;
-      background:var(--accent);color:white;
-      box-shadow:0 6px 18px rgba(138,79,255,0.12);
-    }
-    button.secondary{
-      background:transparent;color:var(--accent);border:1.2px solid rgba(138,79,255,0.12);
-      box-shadow:none;
-    }
+.actions{display:flex;gap:10px;justify-content:flex-start;margin-top:16px}
+button{
+  padding:10px 16px;border-radius:10px;border:0;cursor:pointer;font-weight:600;
+  background:var(--accent);color:white;
+  box-shadow:0 6px 18px rgba(138,79,255,0.12);
+}
+button.secondary{
+  background:transparent;color:var(--accent);border:1.2px solid rgba(138,79,255,0.12);
+  box-shadow:none;
+}
 
-    .preview{
-      margin-top:24px;padding:18px;border-radius:12px;background:#fbf7ff;border:1px solid rgba(138,79,255,0.05);
-    }
-    .site-title{font-size:28px;font-weight:800;margin-bottom:8px}
-    .site-sub{color:var(--muted);font-weight:600}
+.preview{
+  margin-top:24px;padding:18px;border-radius:12px;background:#fbf7ff;border:1px solid rgba(138,79,255,0.05);
+}
+.site-title{font-size:28px;font-weight:800;margin-bottom:8px}
+.site-sub{color:var(--muted);font-weight:600}
 
-    /* responsive */
-    @media (max-width:520px){
-      h1{font-size:30px}
-      .logo{font-size:18px}
-    }
+@media (max-width:520px){
+  h1{font-size:30px}
+}
+
+/* أيقونات داخل الحقول - تدعم RTL تلقائيًا باستخدام الخصائص المنطقية */
+.input-icon{position:relative}
+.input-icon svg{position:absolute;inset-inline-start:12px;top:50%;transform:translateY(-50%);width:20px;height:20px;opacity:0.95;pointer-events:none;color:var(--muted)}
+input.with-icon{padding-inline-start:48px}
+
   </style>
 </head>
 <body>
-  <div class="container">
-    <header>
-      <div class="logo">
-        <div class="mark" id="logoMark">ثورة</div>
-        <div>strikingly AI</div>
-      </div>
-      <div style="margin-inline-start:auto;">
-        <button class="secondary" id="langBtn">الفرنسية</button>
-      </div>
-    </header>
+  <div class="container"><header></header>
 
-    <section class="hero">
-      <h1>أنشئ موقع الويب الخاص بك <span class="accent">في لحظة</span></h1>
-      <p class="lead">أخبرنا قليلاً عن عملك وسنعمل على إنشاء موقع ويب كامل لك فقط.</p>
-    </section>
+<section class="hero">
+  <h1>
+    ننشئ لك موقعًا احترافيًا يختصر عليك الوقت، ويبرز اسمك وعلامتك التجارية،
+    <span class="accent"></span>
+  </h1>
+  <p class="lead">شاركنا تفاصيل مشروعك، ودعنا نبني لك حلولا متكاملة ترتكز على بياناتك وتخدم أهدافك التسويقية بدقة واحترافية.</p>
+</section>
 
-    <div class="card">
-      <form id="siteForm" autocomplete="off" onsubmit="return false;">
-        <label for="siteName">اسم الموقع</label>
-        <input type="text" id="siteName" placeholder="عنوان موقع الويب، على سبيل المثال اسم شركتك">
+<div class="card">
+  <form id="siteForm" autocomplete="off" onsubmit="return false;">
 
-        <label for="companyDesc">وصف الشركة</label>
-        <textarea id="companyDesc" placeholder="صف شركتك في جملة أو جملتين"></textarea>
+    <label for="siteName">اسم الموقع</label>
+    <input type="text" id="siteName" placeholder="اسم موقعك أو نشاطك">
 
-        <label for="email">ايميل الموقع (إن وُجد)</label>
-        <input type="email" id="email" placeholder="contact@example.com">
+    <label for="companyDesc">وصف الشركة</label>
+    <textarea id="companyDesc" placeholder="اكتب وصفًا مختصرًا لنشاطك"></textarea>
 
-        <div class="actions">
-          <button id="saveBtn">حفظ وتطبيق</button>
-          <button class="secondary" id="clearBtn" type="button">مسح التخزين</button>
-        </div>
+    
 
-        <div class="preview" id="preview">
-          <!-- preview area -->
-          <div id="homepage">
-            <div class="site-title" id="homepageTitle">اسم موقعك الخاص</div>
-            <div class="site-sub" id="homepageSub">خاص بك</div>
-          </div>
-          <div style="margin-top:12px;color:var(--muted)" id="previewDesc">وصف الشركة سيظهر هنا.</div>
-          <div style="margin-top:10px;color:var(--muted)" id="previewEmail">لا يوجد ايميل مخزن.</div>
-        </div>
-      </form>
+    <label for="phone">رقم الهاتف</label>
+    <input type="text" id="phone" placeholder="أدخل رقم هاتفك">
+
+    
+
+    <div class="actions">
+      <button id="saveBtn">إرسال الطلب</button>
+      <button class="secondary" id="clearBtn" type="button">ابدأ من جديد</button>
     </div>
-  </div>
 
-  <script>
-    // مفاتيح التخزين المحلي
+    <div class="preview" id="preview">
+      <div id="homepage">
+        <div class="site-title" id="homepageTitle"></div>
+        <div class="site-sub" id="homepageSub"></div>
+      </div>
+      <div style="margin-top:12px;color:var(--muted)" id="previewDesc"></div>
+      <div style="margin-top:10px;color:var(--muted)" id="previewEmail"></div>
+    </div>
+  </form>
+
+  <!-- روابط تواصل سريعة احترافية -->
+  <div class="quick-contact" style="margin-top:28px; display:flex; gap:18px; flex-wrap:wrap;">
+
+    
+
+</div>
+
+  </div>  <script>
     const KEY_NAME = 'my_site_name_v1';
     const KEY_EMAIL = 'my_site_email_v1';
     const KEY_DESC = 'my_site_desc_v1';
 
-    // عناصر DOM
     const siteNameInput = document.getElementById('siteName');
     const emailInput = document.getElementById('email');
     const descInput = document.getElementById('companyDesc');
+
     const saveBtn = document.getElementById('saveBtn');
     const clearBtn = document.getElementById('clearBtn');
 
@@ -142,13 +142,11 @@
     const previewDesc = document.getElementById('previewDesc');
     const previewEmail = document.getElementById('previewEmail');
 
-    // تحميل من localStorage عند البدء وعرضها
     function loadFromStorage(){
       const name = localStorage.getItem(KEY_NAME);
       const email = localStorage.getItem(KEY_EMAIL);
       const desc = localStorage.getItem(KEY_DESC);
 
-      // تعبئة الحقول
       if(name) siteNameInput.value = name;
       if(email) emailInput.value = email;
       if(desc) descInput.value = desc;
@@ -156,69 +154,101 @@
       updatePreview();
     }
 
-    // تحديث المعاينة على الصفحة الأولى حسب ما هو مخزن
     function updatePreview(){
-      const name = localStorage.getItem(KEY_NAME) || siteNameInput.value || '';
-      const email = localStorage.getItem(KEY_EMAIL) || emailInput.value || '';
-      const desc = localStorage.getItem(KEY_DESC) || descInput.value || '';
+      const storedName = localStorage.getItem(KEY_NAME);
+      const storedEmail = localStorage.getItem(KEY_EMAIL);
+      const storedDesc = localStorage.getItem(KEY_DESC);
 
-      // عنوان الصفحة الأولى: إذا كان مخزنًا نعرضه؛ إذا لم يكن مخزنًا عرض بديل "اسم موقعك الخاص" بدون كلمة "الشركة"
-      if(localStorage.getItem(KEY_NAME)){
-        homepageTitle.textContent = localStorage.getItem(KEY_NAME);
-        homepageSub.textContent = ''; // لا نضيف كلمة "الشركة" حسب طلبك
+      const name = storedName || siteNameInput.value || '';
+
+      if(storedName){
+        homepageTitle.textContent = storedName;
+        homepageSub.textContent = '';
       } else if(name.trim() !== ''){
         homepageTitle.textContent = name;
-        homepageSub.textContent = ''; // بدون كلمة الشركة
+        homepageSub.textContent = '';
       } else {
-        homepageTitle.textContent = 'اسم موقعك الخاص';
-        homepageSub.textContent = 'خاص بك';
+        homepageTitle.textContent = '';
+        homepageSub.textContent = '';
       }
 
-      previewDesc.textContent = desc ? desc : 'وصف الشركة سيظهر هنا.';
-      previewEmail.textContent = email ? 'الإيميل: ' + email : 'لا يوجد ايميل مخزن.';
+      previewDesc.textContent = storedDesc || descInput.value || '';
+      previewEmail.textContent = (storedEmail || emailInput.value) ?
+        'الإيميل: ' + (storedEmail || emailInput.value) :
+        '';
     }
 
-    // حفظ الحقول في localStorage
     saveBtn.addEventListener('click', () => {
       const name = siteNameInput.value.trim();
       const email = emailInput.value.trim();
       const desc = descInput.value.trim();
 
-      if(name) localStorage.setItem(KEY_NAME, name);
-      else localStorage.removeItem(KEY_NAME);
-
-      if(email) localStorage.setItem(KEY_EMAIL, email);
-      else localStorage.removeItem(KEY_EMAIL);
-
-      if(desc) localStorage.setItem(KEY_DESC, desc);
-      else localStorage.removeItem(KEY_DESC);
+      name ? localStorage.setItem(KEY_NAME, name) : localStorage.removeItem(KEY_NAME);
+      email ? localStorage.setItem(KEY_EMAIL, email) : localStorage.removeItem(KEY_EMAIL);
+      desc ? localStorage.setItem(KEY_DESC, desc) : localStorage.removeItem(KEY_DESC);
 
       updatePreview();
-      // إظهار إشارة سريعة للمستخدم
-      saveBtn.textContent = 'تم الحفظ ✔️';
-      setTimeout(()=> saveBtn.textContent = 'حفظ وتطبيق', 1200);
+
+      saveBtn.textContent = 'تم الإرسال ✔️';
+      setTimeout(()=> saveBtn.textContent = 'إرسال الطلب', 1200);
     });
 
-    // مسح التخزين المحلي
     clearBtn.addEventListener('click', () => {
-      localStorage.removeItem(KEY_NAME);
-      localStorage.removeItem(KEY_EMAIL);
-      localStorage.removeItem(KEY_DESC);
-      siteNameInput.value = '';
-      emailInput.value = '';
-      descInput.value = '';
+      localStorage.clear();
+      siteNameInput.value='';
+      emailInput.value='';
+      descInput.value='';
+
       updatePreview();
-      clearBtn.textContent = 'تم المسح';
-      setTimeout(()=> clearBtn.textContent = 'مسح التخزين', 1000);
+
+      clearBtn.textContent='تمت الإعادة';
+      setTimeout(()=> clearBtn.textContent='ابدأ من جديد',1000);
     });
 
-    // تحديث المعاينة أثناء الكتابة (بدون حفظ)
     [siteNameInput, emailInput, descInput].forEach(el=>{
       el.addEventListener('input', updatePreview);
     });
 
-    // تحميل أولي
     loadFromStorage();
-  </script>
-</body>
+  </script><style>
+  .contact-floating{
+    position:fixed;
+    bottom:20px;
+    inset-inline-start:20px;
+    z-index:999;
+  }
+  .contact-btn{
+    width:58px;height:58px;border-radius:50%;border:0;cursor:pointer;
+    background:#8a4fff;color:white;display:flex;align-items:center;justify-content:center;
+    box-shadow:0 6px 20px rgba(0,0,0,0.15);
+  }
+  .contact-btn svg{width:28px;height:28px;fill:white;transform:rotate(90deg);}
+
+  .contact-icons{
+    display:flex;flex-direction:column;gap:10px;
+    margin-bottom:12px;opacity:0;pointer-events:none;transform:translateY(20px);
+    transition:0.3s ease;
+  }
+  .contact-icons.show{
+    opacity:1;pointer-events:auto;transform:translateY(0);
+  }
+
+  .contact-icons .icon{
+    width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+    background:white; box-shadow:0 4px 15px rgba(0,0,0,0.12);
+  }
+  .icon svg{width:26px;height:26px;fill:white;}
+
+  .whatsapp{background:#25d366;}
+  .telegram{background:#229ED9;}
+  .instagram{background:#E1306C;}
+</style><script>
+  const contactToggle = document.getElementById('contactToggle');
+  const contactIcons = document.getElementById('contactIcons');
+
+  contactToggle.addEventListener('click', ()=>{
+    contactIcons.classList.toggle('show');
+  });
+</script><!-- Contact Info --><div id="contactPhone" style="margin-top:10px;color:var(--muted)"> </div>
+<div id="contactWhatsapp" style="margin-top:5px;color:var(--muted)"> </div></body>
 </html>
