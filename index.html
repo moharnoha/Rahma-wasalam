@@ -34,6 +34,8 @@
       color: #111;
       overflow-x: hidden;
       scroll-behavior: smooth;
+      opacity: 1 !important;          /* منع بقاء أي تأثير */
+      transition: none !important;    /* منع أي انتقال سابق */
     }
 
     h1, h2, h3, h4, h5, h6 { font-family: "Cairo", sans-serif; }
@@ -318,7 +320,7 @@
 </head>
 <body>
 
-  <!-- ✅ Header -->
+  <!-- Header -->
   <header>
     <div class="header-inner">
       <button class="hamburger" aria-label="menu">
@@ -329,7 +331,7 @@
       <a href="#" class="logo">
         <img src="https://i.postimg.cc/vHqVW38n/IMG-0846.jpg" alt="Logo">
       </a>
-      <button class="cta" onclick="window.location.href='Connectez-vous/'">Connectez-vous</button>
+      <button class="cta" onclick="location.href='Connectez-vous/'">Connectez-vous</button>
     </div>
 
     <nav>
@@ -340,7 +342,7 @@
     </nav>
   </header>
 
-  <!-- ✅ القسم 1 -->
+  <!-- القسم 1 -->
   <section class="hero-normal">
     <div class="content">
       <h1>Créateur de<br>site Web</h1>
@@ -358,7 +360,7 @@
     </div>
   </section>
 
-  <!-- ✅ القسم 2 -->
+  <!-- القسم 2 -->
   <section class="hero-full">
     <div class="hero-content">
       <span class="kicker">نَمَاذِجُ التَّصْمِيم</span>
@@ -370,13 +372,13 @@
     </div>
   </section>
 
-  <!-- ✅ القسم 3 -->
+  <!-- القسم 3 -->
   <section class="features-section" dir="rtl">
     <h5 class="section-subtitle">فوائد</h5>
     <h2 class="section-title">أكثر بكثير من مجرد منشئ موقع ويب</h2>
     <div class="images-wrapper">
       <div class="grid-bg"></div>
-      <img src="https://i.postimg.cc/FK87HV5C/features-website-builder-2x-fr-fr-1.webp" alt="مميزات منشئ المواقع" class="feature-image">
+      <img src="https://i.postimg.cc/FK87HV5C/features-website-builder-2x-fr-fr-1.webp" class="feature-image">
     </div>
     <div class="text-content">
       <h2>أخبر قصتك بموقع ويب مخصص</h2>
@@ -387,7 +389,7 @@
     </div>
   </section>
 
-  <!-- ✅ القسم 4 الجديد -->
+  <!-- القسم 4 -->
   <section class="designs-section">
     <h2>Designs de sites Web pour tous les secteurs d'activité</h2>
     <p>
@@ -417,17 +419,17 @@
     </div>
   </section>
 
-  <!-- ✅ JS -->
+  <!-- JS -->
   <script>
     const startBtn = document.getElementById("startBtn");
     const entrepriseInput = document.getElementById("entrepriseInput");
     const uploadLogo = document.getElementById("uploadLogo");
 
-    const fadeOut = (callback) => {
-      document.body.style.transition = "opacity 0.5s ease";
-      document.body.style.opacity = "0";
-      setTimeout(callback, 500);
-    };
+    /* إزالة التلاشي بالكامل */
+    function goto() {
+      document.body.style.opacity = "1";  
+      window.location.href = "Connectez-vous/";
+    }
 
     startBtn.addEventListener("click", () => {
       const name = entrepriseInput.value.trim();
@@ -438,12 +440,13 @@
         return;
       }
       localStorage.setItem("entrepriseName", name);
-      fadeOut(() => (window.location.href = "Connectez-vous/"));
+      goto();
     });
 
     uploadLogo.addEventListener("click", () => {
-      fadeOut(() => (window.location.href = "Connectez-vous/"));
+      goto();
     });
   </script>
+
 </body>
 </html>
